@@ -3,8 +3,6 @@
 `onezero_Knowledge_Storage`는 일영 개발 동아리 구성원들의 지식을 공유하고 저장하기 위한 저장소입니다. 이 저장소는 Obsidian과 Git 플러그인을 사용하여 지식을 체계적으로 관리하고, 버전 관리를 통해 변경 사항을 추적합니다.
 
 
----
-
 # How to Use
 
 1. **Obsidian 설치**
@@ -29,15 +27,11 @@
 	*( `Git: Create backup`대신 `back`만 입력해도 가장 먼저 떠서 편리하다. )*
 
 
----
-
 # Additional Resources
 
 - [Obsidian Documentation](https://help.obsidian.md/)
 - [Git Documentation](https://git-scm.com/doc)
 
-
----
 
 # Contact
 
