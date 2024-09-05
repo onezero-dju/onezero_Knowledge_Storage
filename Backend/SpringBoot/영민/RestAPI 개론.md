@@ -1,6 +1,6 @@
 
 # REST
-REST (Representational State Transfer, 자원의 상태 전달)
+[[REST]] (Representational State Transfer, 자원의 상태 전달)
 네트워크 아키텍처 원리
 
 1. Client, Server : 클라이언트와 서버가 서로 **독립적으로 분리**되어있어야 한다.
@@ -75,7 +75,7 @@ URL은 URI의 하위 개념
 
 [[OSI]] 7 Layer
 
-OSI 7 Layer
+[[OSI 7 Layer]]
 1. 물리 계층
 2. 데이터 계층
 3. 네트워크 계층
