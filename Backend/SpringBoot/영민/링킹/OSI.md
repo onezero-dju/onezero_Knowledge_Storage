@@ -1,0 +1,1 @@
+OSI ( **Open Systems Interconnection** ) **모델** 은 "시스템 상호 연결을 위한 표준 개발의 조정을 위한 공통 기반을 제공합니다.
