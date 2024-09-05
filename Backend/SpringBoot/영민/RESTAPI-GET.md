@@ -6,7 +6,7 @@ Gradle - Groovy
 
 [[Dependencies]]
 - Lombok 라이브러리 사용
-- Spring Web
+- Spring Weba
 
 프로젝트를 만들어 IntelliJ로 프로젝트를 열어서 작업하는 것.
 프로젝트를 실행했을 때, Tomcat port가 무엇으로 시작되는지를 확인 해야한다.
