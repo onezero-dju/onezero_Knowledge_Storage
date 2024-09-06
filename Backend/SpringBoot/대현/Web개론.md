@@ -12,9 +12,7 @@
 2. 이름에는 **하이퍼텍스트 전송용 프로토콜**로 정의되어 있지만, 실제로는 HTML, XML, JSON, 이미지, 음성, 비디오, JavaScript, PDF 등 
    다양한 컴퓨터에서 다룰 수 있는 것을 모두 전송할 수 있습니다.
 3. HTTP는 TCP를 기반으로 한 REST의 특징을 모두 구현하고 있는 Web 기반의 프로토콜입니다.
-<figure>
-  <img src = "/PNG/HTTP.PNG">
-</figure>
+![1280X1280](https://github.com/user-attachments/assets/7d000cbb-5ed8-480a-80c8-5675a3313a80)
 
 ### HTTP 메소드
 
