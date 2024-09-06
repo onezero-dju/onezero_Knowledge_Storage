@@ -13,7 +13,7 @@
    다양한 컴퓨터에서 다룰 수 있는 것을 모두 전송할 수 있습니다.
 3. HTTP는 TCP를 기반으로 한 REST의 특징을 모두 구현하고 있는 Web 기반의 프로토콜입니다.
 <figure>
-  <img src = "1.PNG">
+  <img src = "/PNG/HTTP.PNG">
 </figure>
 
 ### HTTP 메소드
