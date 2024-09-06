@@ -13,10 +13,12 @@
 
 ### Git Branch 전략
 `main` branch → `Backend` branch → `{각자이름}` branch
+
 `{각자이름}` branch 에서 문서화 → 활동 시간에 개념에 대한 토론 진행 후 하나의 파일에 정리 → 정리된 파일을 `Backend` branch에 push
 
 ### 디렉토리 구조
 `onezero Knowledge Store` → `Backend` → `Spring Boot` → `{각자이름}`
+
 `{각자이름}` 디렉토리 안에서 문서화를 진행하면 된다.
 
 ### 문서화의 과정
