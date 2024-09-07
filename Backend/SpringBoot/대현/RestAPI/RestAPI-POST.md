@@ -1,7 +1,10 @@
 # POST란?
+
+| Method  | 의미                | CRUD | 멱등성 | 안전성 | Path Variable | Query Parameter | DataBody |
+|---------|---------------------|------|--------|--------|---------------|-----------------|----------|
+| **POST**   | 리소스 생성          | C    | X      | X      | O             | △               | O        |
 - Databody를 통해서 Data를 전달하는 방식이 POST방식이다.
 - POST방식은 Default가 객체로 데이터를 받아야한다.
-
 ---
 
 ## @RequestBody
