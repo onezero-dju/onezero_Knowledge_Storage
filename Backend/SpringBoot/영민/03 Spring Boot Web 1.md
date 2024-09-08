@@ -1,12 +1,11 @@
 
-### Spring Boot Web에서 응답 만들기
+# Spring Boot Web에서 응답 만들기
 
 | String         | 일반 Text Type 응답                                 |
 | -------------- | ----------------------------------------------- |
 | Object         | 자동으로 Json 변환되어 응답 상태값은 항상  200 OK               |
 | ResponseEntity | Body의 내용을 Object로 설정 상황에 따라서 HttpStatus Code 설정 |
 | @ResponseBody  | RestController가 아닌곳 (Controller)에서 Json응답을 내릴때  |
-
 
 ### 코드리뷰
 @RestController
@@ -25,8 +24,6 @@ Object class를 리턴하게 되면, spring boot 가 알아서 JSON으로 바꿔
 응답의 형식은 `@JsonNaming` 어노테이션에 따라 snake case, camel case 값이 달라진다.
 
 
----
-
 ### 응답 처리
 메서드의 타입을 ResponseEntity class로 선언하고, 
 	*(ResponseEntity<\UserRequest>처럼 제네릭으로 메서드 타입을 선언하는 것이 더 좋음. )*
@@ -38,7 +35,6 @@ Object class를 리턴하게 되면, spring boot 가 알아서 JSON으로 바꿔
 
 응답에 header를 추가할 수도 있다.
 `var response = ResponseEntity.status(HttpStatus.OK).header("x-custom", "hi").body(user);`
-
 
 #### 다른 방식의 응답 처리
 
