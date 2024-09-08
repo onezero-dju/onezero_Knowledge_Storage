@@ -2,14 +2,14 @@
 
 # [[Path Variable]]로 받는 방법
 @GetMapping(path = "/echo/{**message**}")
-중괄호에 유의
-
+	중괄호에 유의
+	<클래스에 붙는 어노테이션>
 
 ### 메소드에 매개변수를 선언
 
 @PathVariable String **message**
 	변수명은 메소드의 어노테이션에 있는 괄호안에 있는 변수명과 같아야한다.
-
+	<매서드에 붙는 어노테이션>
 
 주소로 입력 되는 값을 문자로 parsing하는 것이다.
 메소드의 변수로 자동으로 값이 매칭이 되는 것이다.
@@ -19,7 +19,7 @@
 
 @PathVariable(name = "message") String **msg**
 	이렇게 변수명이 다른 경우에는 어노테이션에 name이라는 변수에 원하는 데이터 값을 넣으면 msg에 name의 값이 매칭이 되어 사용할 수 있다.
-
+	<매개변수에 붙는 어노테이션>
 
 
 ### port 오류
@@ -53,12 +53,13 @@ http://localhost:8080/api/book?category=IT&issuedYear=2023&issued-month=01&issue
 ```
 
 @GetMapping(path = "/book")
+	<클래스에 붙는 어노테이션>
 
 매개변수 설정
 @RequestParm String category
 @RequestParm String issuedYear
 @RequestParm(name = "issued-month") String issuedMonth
-	원칙을 잘 지키는 코드
+	*(원칙을 잘 지키는 코드)*
 @RequestParm String issued_day
 
 변수명이 동일하면 요청되는 동일한 값으로 매칭된다.
@@ -72,7 +73,7 @@ Java는 카멜 케이스를 사용함.
 
 
 #### 모델을 활용한 Query Parameter
-
+[[객체 만들 때 어노테이션]]
 @Data 
 	어노테이션을 클래스 앞에 선언한다.
 	이는 lombok을 사용하기 위함이다.

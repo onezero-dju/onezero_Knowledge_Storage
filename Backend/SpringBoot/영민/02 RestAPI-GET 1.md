@@ -1,4 +1,17 @@
-참고 : [[HTTP 메소드]]
+참고 - [[HTTP 메소드]]
+
+- **CRUD 역할**: GET은 **R(Read)** 역할을 합니다. 서버에서 데이터를 가져오기만 하며, 서버의 상태를 변경하지 않습니다.
+    
+- **멱등성**: GET은 **멱등성**을 가집니다. 동일한 GET 요청을 여러 번 보내도 서버의 상태가 변하지 않고, 항상 같은 결과를 반환합니다.
+    
+- **안정성**: GET은 **안정성**이 있습니다. 서버에 데이터를 요청하는 것만으로 서버의 상태를 변경하지 않기 때문에 안전한 요청 방식으로 간주됩니다.
+    
+- **Path Variable과 Query Parameter**: GET 요청에서는 **Path Variable**과 **Query Parameter**를 모두 사용할 수 있습니다.
+    
+    - **Path Variable**은 특정 리소스를 식별할 때 사용되고,
+    - **Query Parameter**는 필터링, 정렬, 검색 등의 조건을 설정할 때 사용됩니다.
+- **DataBody**: GET 요청은 **DataBody**를 포함하지 않습니다. GET은 단순히 서버에 리소스를 요청하는 것이기 때문에 요청 본문이 필요하지 않습니다.
+
 
 [Spring initializr](https://start.spring.io/)에서 프로젝트를 설치할 수 있다.
 설정값은 아래와 같다.
@@ -15,16 +28,17 @@ Gradle - Groovy
 ### [[어노테이션]]
 `@RestController`
 	// Rest api를 처리해주는 컨트롤러
+	<클래스에 붙는 어노테이션>
 `@RequestMapping("/api")`
 	// 괄호 안에 있는 주소를 받는다.
-
+	<클래스에 붙는 어노테이션>
 
 `@GetMapping`
 	// Get Method를 사용하기 위해 해당 어노테이션을 작성
 	@GetMapping에 path를 설정할 수 있다.
 	ex) `@GetMapping(path = "/hello")
 	이렇게 되면, /api/hello 의 주소를 받는 것이다.
-
+	<메서드에 붙는 어노테이션>
 
 ### 주소
 local 주소 이므로 URL은 http로 시작한다. 그 이유는 [[localhost에서 http쓰는 이유]]에서 확인 가능하다.
