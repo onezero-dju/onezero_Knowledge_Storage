@@ -98,3 +98,26 @@ public ResponseEntity<Api> noSuchElement(
 ```
 해당 코드를 ExceptionHandler class에 작성을 한다. 이 코드를 작성하게 되면, `NoSuchElementException`에 대한 예외를 잡아 작동이 된다.
 예외 결과로 응답은 404를 반환하고 데이터 body에는 `resultCode`와 `resultMessage`를 반환한다.
+
+
+
+---
+### 예외처리 우선순위
+
+정확한 이해를 위해 `RestApiExceptionHandler` class 에서는 Global하게 예외를 잡지 않고,
+GlobalExceptionHandler라는 class를 만들어 따로 관리한다.
+
+Handler가 2개인 경우 순서를 지정해 줄 수 있다.
+@Order(value = Integer.MAX_VALUE)
+	<클래스에 붙는 어노테이션>
+	 우선순위가 가장 낮은 순위
+
+@Order(1)
+	<클래스에 붙는 어노테이션>
+	 MAX_VALUE 보다는 우선순위가 높음.
+Order 값을 통해서 우선순위가 결정된다. 숫자가 낮을수록 더 높은 우선순위를 가집니다.
+
+
+Global 예외처리는 우선순위를 가장 낮게 설정하여 실행되어야 한다. 이러한 예외처리를 하여 예상치 못한 예외를 잡을 수 있다. 
+
+그렇기에 GlobalExceptionHandler는 필수로 넣어야 한다.
