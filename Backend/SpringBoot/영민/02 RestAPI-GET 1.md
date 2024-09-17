@@ -30,7 +30,7 @@ Gradle - Groovy
 	// Rest api를 처리해주는 컨트롤러
 	<클래스에 붙는 어노테이션>
 `@RequestMapping("/api")`
-	// 괄호 안에 있는 주소를 받는다.
+	// 괄호 안에 있는 주소를 통해 요청을 받는다.
 	<클래스에 붙는 어노테이션>
 
 `@GetMapping`
