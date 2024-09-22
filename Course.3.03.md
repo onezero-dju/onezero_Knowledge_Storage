@@ -1,0 +1,63 @@
+#### Spring Boot Web에서 응답 만들기
+응답
+- String: 일반 Text Type 응답
+- Object: 자동을 Json 변환되어 응답 
+	- 상태 값은 항상 200 OK
+-  ResponseEntity: Body의 내용을 Object로 설정
+	- 상황에 따라서 HttpStatus Code 설정
+- @ResponseBody: RestController가 아닌 곳(Controller에서 Json 응답을 내릴 때
+- Object 클래스를 리턴하게 되면 해당 클래스의 내용을 Spring Boot가 알아서 Json으로 바꿔 내려주는데 그 Json의 형태는 클래스와 동일하게 생김
+- 그 클래스를 만드는 Camel case 와 Snake case 방식은 JsonNaming 어노테이션에 따라 달라지게 되어있음
+
+- Object를 텍스트 형식으로 바꿀 때에는 Object를 String으로 바꿈
+	- @Slf4j를 추가해주고 log.info("user : {}", user)을 적어준 후 
+		- log.info를 통해서 중괄호( { } )를 작성 해줌
+		- 여기에 mapping할 객체를 작성해줌 (user)
+	- string 형태로 return하기 위해 tostring()을 추가해줌
+	- 다음 결과는 toString에 찍히는 결과와 동일함
+		- toString이 된 내용이 return이 되는 것과 동일함
+			- 이런 식으로 retrun 할 일은 거의 없음
+
+- UserRequest를 retrun하게 되는데 커스텀 할 수 있는 방법
+	- 프로젝트를 진행하다 보면 응답에 대해서 status Code를 여러가지 내려줘야 할 수  있음
+	- 지금 써져있는 코드를 응답하면 200 OK가 응답이 됨
+	- 하지만 생성했을 때에는 201과 다른 status Code 혹은 400/ 500같은 기타 코드를 입력해 줘야 할 때 사용하는 방법이 있음
+	- 리턴되는 형태는  ResponseEntity를 사용함
+		- 이를 생성하는 방법은  
+			- var response = ResponseEntity.status(HttpStatus.OK).body(user); 를 적어줌
+			- return에는 response를 적어줌
+			- 바뀌는 변화는 크게 없음
+		- 201로 바꿔본다면
+		    - ResponseEntity<> <- 안쪽에 적어줌UserRequest
+		    - Ctrl을 누른 후 HttpStatus.OK부분에서 OK를 눌러서 들어감
+		    - 201이 무슨 코드인지 확인 한 후 OK부분에 적어줌
+		    - 저장후 send 해보면 201로 시작 됨
+		- 400번으로 바꾸기 위해서는
+			- Bad Request를 작성 
+			- 저장 후 실행
+		- 다음과 같이 status를 조작하거나 다른 값을 넣어주기 위해서는 ResponseEntity를 사용함
+		- header도 가능함
+			- .header("x-custom","hi")을 적어주면 
+			- header 부분에 x-custom 부분에 hi가 뜨게 됨 
+			- 이를 사용할 때에도 ResponseEntity를 사용해야 함
+	- RestController를 사용하는 이유
+		- 반드시 해당 컨드롤러는 RestApi로 동작하겠다 -> 응답 값이 Json으로 선언 하겠다라는 선언임
+		- Spring Boot에는 반듯이 Json 응답만 있는 것이 아님
+			- html 응답도 가능
+				- 다음 응답을 쓰기 위해서는
+					- @Controller을 사용하면 됨
+						- @Controller가 return을 해준다면 페이지 리소스도 리턴해 줄 수 있어서 @ResponseBody를 추가해줘야 함
+							- 위를 적어줄 시 @Controller 어노테이션 일 때 Json 형식으로 응답이 된다는 것을 말함
+							- @ResponseBody가 없다면 404 에러가 뜸
+							- 이와 같은 이유로  @RestController를 사용함
+		- 이와 비슷하게
+			- @GetMapping만 있는것이 아님
+			- @RequestMapping(path = " ", method - RequestMethod.Get) 도 있음
+				- path(경로)와 method를 이용하여 어떤 RequestMethod와 매칭 시키겠다고 할 수 있음 위에는 Get 메소드만 받겠다고 했음 그렇다면 GetMapping과 같음
+				- 만약 method를 굳이 지정해 주지 않는다면 모든 Mapping을 사용하게 됨
+				- 하지만 이보다는 어떤 메소드로 가겠다를 지정해 주는 게 좋음
+				- 이러한 이유로 @GetMapping를 이용함
+	- Spring Boot내에서 응답을 내리는 주로 사용하는 방법
+		- 객체를 리턴하는 것을 주로 사용함
+			- ResponseEntity는 해당 로직을 처리하다가 예외가 발생했을 때 응답 코드를 내리는 방법
+- 
