@@ -90,4 +90,16 @@ name 또는 nickName 하나는 있어야한다는 조건.
 
 6번을 Pattern.matches(`입력값`, `정규식`) 으로 하게 되면, 정확한 값을 Client가 입력해도 false를 반환한다. 
 ~~(이거 때문에 1시간 날림... 아니 강의에선 입력값 정규식 순으로 넣던데...ㅠ)~~
+~~아니... 다음 강의에서 알려주는게 어딨어요.. 열심히 찾아봤는데...~~
+
+---
+### YearMonth 어노테이션
+
+default pattern을 만들 수 있다. 어노테이션을 붙일 때, 패턴을 지정해 줄 수 있다.
+	ex) default pattern : "yyyyMM"  /  @YearMonth("yyyy-MM")
+
+어노테이션 클래스에도 [[Validation 어노테이션]]을 붙일 수 있다.
+	ex) @NotBlank
+		class ~~~
+	이렇게 붙이면 클래스에 붙은 어노테이션과 커스텀한 어노테이션 모두 사용이 가능하다.
 
