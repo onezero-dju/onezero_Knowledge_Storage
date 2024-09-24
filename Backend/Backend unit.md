@@ -9,4 +9,3 @@
 - Sprint Team
 - Project Team
 - Beginner Team
-
