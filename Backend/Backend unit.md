@@ -28,5 +28,4 @@
 ### 백엔드 유닛
 3개의 팀으로 나뉜다.
 - Sprint Team
-- Project Team
 - Beginner Team

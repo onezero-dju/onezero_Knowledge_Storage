@@ -1,0 +1,2 @@
+**유저 인터페이스**([영어](https://ko.wikipedia.org/wiki/%EC%98%81%EC%96%B4 "영어"): user interface, **UI**)는 사람([사용자](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90_(%EC%BB%B4%ED%93%A8%ED%8C%85) "사용자 (컴퓨팅)"))과 사물 또는 시스템, [기계](https://ko.wikipedia.org/wiki/%EA%B8%B0%EA%B3%84 "기계"), [컴퓨터 프로그램](https://ko.wikipedia.org/wiki/%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8 "컴퓨터 프로그램") 등 사이에서 의사소통을 할 수 있도록 일시적 또는 영구적인 접근을 목적으로 만들어진 물리적, 가상적 매개체를 뜻한다.
+

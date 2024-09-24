@@ -1,0 +1,1 @@
+JAVA ORM(Object Relation Mapping) 기술에 대한 인터페이스
