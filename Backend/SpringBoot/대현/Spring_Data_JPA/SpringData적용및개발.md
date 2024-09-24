@@ -21,6 +21,7 @@ spring:
       dialect: org.hibernate.dialect.MySQL8Dialect   
 
     #Hibernate가 애플리케이션 실행 시 데이터베이스 스키마를 어떻게 다룰지 설정
+    #validate는 Entity에 있는 것과 database table 에 있는 것과 비교하여 값이 틀리거나 없으면 에러가 뜬다
     hibernate:
       ddl-auto: validate
 
@@ -38,3 +39,17 @@ spring:
     username: root
     password: root1234!!
 ```
+
+# @Entity
+- 해당 Entity클래스를 database와 매핑을 시킬 때 쓰는 어노테이션이다
+   - @Entity(name="어떤 테이블과 매핑시킬지 테이블 이름을 적는다")
+
+# @Id
+- primary key로 동작하는 것에 @Id 어노테이션을 달아준다
+
+## @GeneratedValue(strategy="GenerationType.IDENTITY")
+- Id가 어떤 식으로 생성이 될 것인지 지정해주는 어노테이션이다
+
+# JPA가 제공하는 API사용
+- JpaRepository를 상속받아서 사용하면 된다
+   - JpaRepository<어떠한 Entity를 사용할지 , Id의 타입 지정>

@@ -89,3 +89,6 @@ public <S extends T> S save(S entity) {
 }
 ```
 ![image](https://github.com/user-attachments/assets/d79868eb-6fc1-4405-9451-927e9a9f2605)
+
+# Spring Data JPA
+- 자동으로 Hibernate에서 query문을 만들어주고 이 query는 Spring JAP를 통해서 실행이 된다
