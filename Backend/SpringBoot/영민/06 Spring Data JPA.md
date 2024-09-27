@@ -41,4 +41,26 @@ jpa와 라이브러리들을 묶어서 관리하는것이 spring data jpa
 @Entity(name = "{테이블 명}")
 	<클래스에 붙는 어노테이션>
 	해당 어노테이션을 붙이면 테이블 명과 연결해주는 것이다.
-	
+
+
+JpaRepository 인터페이스는 사용하고자 하는 Repository 인터페이스에 상속되어야한다.
+해당 인터페이스는 spring framework에서 추상화된 클래스를 작성하여 제공하는 인터페이스를 사용하기만 하면 된다.
+
+장점 : 
+이미 jpa에서 구현해둔 jpa repository를 상속 받는 것 만으로써 쿼리를 날리지 않아도 해당 내용을 찾아 올 수 있다.
+
+
+```
+@GetMapping("/{name}")  
+public void autoSave(  
+        @RequestParam String name  
+) {  
+    var user = UserEntity.builder()  
+            .name(name)  
+            .build();
+    userRepository.save(user);
+}
+
+// user 라는 테이블에 name이라는 필드에 RequestParam으로 받은 name의 값을 넣어 build한 것
+// user를 Repository에 저장
+```

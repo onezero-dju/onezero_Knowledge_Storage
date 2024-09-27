@@ -16,7 +16,7 @@
 
 
 ## Web의 구성 요소
-#### URL (Unifom Resource Identifier)
+#### URI (Unifom Resource Identifier)
 **리소스 식별자**
 - 특정 사이트, 쇼핑 목록, 동영상 목록
 모든 정보에 접근 할 수 있는 정보
@@ -36,7 +36,7 @@ Chrome, Safarim, Explorer에서 사용자가 알아보기 쉽게 변형
 
 HTTP는 WEB에서 데이터를 주고 받는 프로토콜
 HTML, XML, JSON, Image, Voice, Video, Javascript, PDF 등
-특정한 데이터를 보내는 것이 통신이며, 보내주는 프로토콜이 HTTP
+특정한 데이터를 보내는 것이 통신이며, 보내주는 [[프로토콜]]이 HTTP
 
 
 Client -- 요청 --> Server
