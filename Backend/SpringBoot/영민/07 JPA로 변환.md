@@ -36,3 +36,47 @@ Entity 변경 사항
 
 
 
+---
+
+Query문을 직접 return 해주는 것이 아니라 Method의 형태로 Query문이 반환 될 수 있도록 Method로 실행하는 것이 간단하다.
+
+
+*([Query Method의 본문](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html) 참고)*
+`findAllByScoreGreaterThanEqual()` 
+By를 넣는 이유는 By를 기준으로 왼쪽은 메서드명(findAll = 모두 찾겠다.) / 오른쪽은 쿼리문에 해당된다.
+
+
+`findAllByScoreGreaterThanEqualAndScoreLessThanEqual()`
+keyword : `findAll` , `GreaterThanEqual`, `LessThanEqual`
+
+### Native Query
+Query 형식의 메서드를 만들어도 되지만 실행되는 기능이 많거나 복잡한 Query문 같은 경우에는 메서드 호출이 어려워진다. 그래서 어노테이션으로 지정해 줄 수 있다.
+
+```
+@Query(
+	"select u from user u where u.score >= ?1 AND u.score <= ?2"
+)
+List<UserEntity> score(  
+        int min, int max  
+);
+```
+
+매게변수의 네이밍 바인딩을 할 수 있음.
+```
+@Query(  
+        value = "select * from user u where u.score >= :min AND u.score <= :max",  
+        nativeQuery = true  
+)  
+List<UserEntity> score(  
+        @Param(value = "min") int min,  
+        @Param(value = "max") int max  
+);
+```
+
+
+
+
+### 강사님이 가장 추천하는 방법
+가능하면, Query Method를 사용하는 것.
+부득이하게 복잡한 Query를 사용해야하는 경우에는 Native Query를 사용
+Native Query를 사용할 때, 손이 좀 가더라고 Parameter Binding을 해주는 것이 좋다.
