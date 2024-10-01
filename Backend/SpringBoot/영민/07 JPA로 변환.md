@@ -10,7 +10,7 @@ dependencies {
 1. DataBase를 연결하기 위해 application.yaml 파일에 datasouce를 연결
 	url에 주소와 DataBase이름을 작성
 
-2. [[JPA 옵션]]
+2. [[jpa 옵션]]
 	`show-sql: true` : sql문이 실행될 때마다 로그를 출력
 	`format_sql: true` : sql문이 실행될 때마다 format형식을 출력
 	
