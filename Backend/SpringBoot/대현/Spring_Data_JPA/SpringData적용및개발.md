@@ -39,6 +39,11 @@ spring:
     username: root
     password: root1234!!
 ```
+### hibernate : ddl-auto: 
+- validate : 현재 내가 만들어 놓은 Entitiy와  database에 있는 컬럼과 내용이 맞는지 확인하는 옵션이다
+- create : 생성을 한다
+- create-drop : 서버가 뜰 때마다 drop시키고 서버가 올라갈 때마다 create한다 
+즉 Memory DB와 동일하게 사용된다 
 
 # @Entity
 - 해당 Entity클래스를 database와 매핑을 시킬 때 쓰는 어노테이션이다
