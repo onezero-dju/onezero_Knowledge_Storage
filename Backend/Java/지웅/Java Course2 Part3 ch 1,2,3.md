@@ -6,8 +6,8 @@
 - **모델의 종류** : 
 	- 시작 클래스 : main 클래스 (모델로 특별히 분류하지는 않는듯)
 	- DTO,VO : 데이터를 담는 모델 (사용자 정의 자료형)
-	- DAO : 데이터를 처리하는 모델 (데이터 베이스)
-	- Utility : 도움을 주는 모델 (반복적 사용 기능을 편리하게사용하기위해 클래스로 만들어 논것)
+	- DAO : 데이터를 처리하는 모델 (데이터 베이스) CRUD
+	- Utility : 도움을 주는 모델 (반복적 사용 기능을 편리하게사용하기위해 클래스로 만들어 논것) java.util
 
 C언어 파이썬 등에서 부르는 함수 이것을 확장시킨것이 자바에서 객체이다 객체를 class 라고 부르는데 아래에서부터는 class라 부르겠다 자바기본제공자료형이 아닌 클래스로 만든 자료형을 레퍼런스 타입 이라하고 요런게
 **프리미티브타입** : short, int, long, char, boolean, float, double / 값을 변수에 대입하여 사용하는 형태
@@ -77,6 +77,10 @@ public class Book {
     public String author;  
     public int page;  
     public String isbn;  
+    public Book(){
+    this.title=title
+    
+    }
 }
 public Book(){
 
@@ -95,67 +99,27 @@ public Book(){
 	- 패키지내에 클래스들은 기본적으로 서로 접근 가능하다. 
 	- ![[Pasted image 20241203125610.png]]
 
-객체에 저장된 값을 마음대로 바꾸면 곤란하기때문에 이를 방지하기위해 getter 와 setter를 쓰기 시작했음!! 
 
+
+
+
+실습 2. 몇년도 몇월을 입력받아서 그 날짜의 요일 출력하는 메서드 만들기
+$$h = (q + \left\lfloor \frac{13(m + 1)}{5} \right\rfloor + K + \left\lfloor \frac{K}{4} \right\rfloor + \left\lfloor \frac{J}{4} \right\rfloor - 2 \times J) \mod 7$$
 ```java
-public class book {  
-    private int price;  
-    private String title;  
-    private String author;  
-  
-    public book(int price, String title, String author) {  
-        this.price = price;  
-        this.title = title;  
-        this.author = author;  
-    }  
-  
-    public String getTitle() {  
-        return title;  
-    }  
-  
-    public void setTitle(String title) {  
-        this.title = title;  
-    }  
-  
-    public int getPrice() {  
-        return price;  
-    }  
-  
-    public void setPrice(int price) {  
-        this.price = price;  
-    }  
-  
-    public String getAuthor() {  
-        return author;  
-    }  
-  
-    public void setAuthor(String author) {  
-        this.author = author;  
-    }  
-  
-    @Override  
-    public String toString() {  
-        return "book{" +  
-                "price=" + price +  
-                ", title='" + title + '\'' +  
-                ", author='" + author + '\'' +  
-                '}';  
-    }  
-}
+int h = (date + ((13 * (month + 1)) / 5) + year + (year / 4) - (year / 100) + (year / 400)) % 7;
 ```
 
-위에 처럼 this 를 이용하여 `private`로 접근불가능하더라도 setter 를 이용하여 함수내에 포인터인 this. 를 이용해 private에 접근할수 있었다.
+- 위에서 $⌊$ 요 기호는 **내림**을 나타내는 기호이다. 수학에서 "⌋"은 **소수점을 버리고 정수 부분만 남기는 내림**(floor)을 나타낸다. 즉, 어떤 실수나 숫자를 내림하여 정수로 만드는 연산을 의미함 
+	- 예를 들어, 3.73.73.7을 내리면 333이 된다. −3.7-3.7−3.7을 내리면 −4-4−4가 된다. 이는 "내림" 또는 "버림(floor)" 연산이라고도 부른다.
 
+- "mod"는 나머지 연산을 나타냅니다.
 
+- h는 요일을 나타내는 값입니다. (0 = Saturday, 1 = Sunday, ..., 6 = Friday)
+- q는 날짜 (일)
+- m은 월 (3 = March, 4 = April, ..., 12 = December, January과 February은 13, 14로 취급)
+- K는 년도의 100으로 나눈 나머지 (년 % 100)
+- J는 년도를 100으로 나눈 몫 (년 // 100)
+- **1월**과 **2월**은 **13월, 14월**로 취급합니다.
 
-```java
-public class main {  
-    public static void main(String[] args) {  
-        book BK =new book(23,"장","중");  
-        System.out.println(BK.toString());  
-    }  
-}
-```
-
-> 실행시
-> book{price=23, title='장', author='중'}
+변수를 함수에서 호출할때 인자
+호출되면 인수

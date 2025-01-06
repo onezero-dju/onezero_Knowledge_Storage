@@ -48,6 +48,8 @@ String str=scan.nextLine();//문자열 입력 (엔터까지 입력받음)
 | a*=b      | a=a*b |
 | a/=b      | a=a/b |
 | a%=b      | a=a%b |
+
+a변수 길이가 길어지면 불편하기 떄문에
 # 논리사고 if swich for while
 
 ## if
